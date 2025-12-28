@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="2600" height="1200" viewBox="0 0 2600 1200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Arka Plan -->
+  <rect x="0" y="0" width="2600" height="1200" fill="#f0f2f5"/>
+  
+  <!-- KORİDORLAR (Zemin) -->
+  <!-- Dikey Koridor (Uzatılmış) -->
+  <rect x="220" y="0" width="80" height="1000" fill="#ffffff"/>
+  <!-- Yatay Koridor (Uzatılmış) -->
+  <rect x="300" y="190" width="2500" height="80" fill="#ffffff"/>
+  
+  <!-- KORİDOR DUVARLARI (Ana Yapı) -->
+  <g stroke="#2c3e50" stroke-width="6" fill="none" stroke-linecap="round">
+    <!-- Sol Dikey Duvar -->
+    <line x1="220" y1="0" x2="220" y2="1000"/>
+    <!-- Sağ Dikey Duvar (Üst) -->
+    <line x1="300" y1="0" x2="300" y2="190"/>
+    <!-- Sağ Dikey Duvar (Alt - Uzatılmış) -->
+    <line x1="300" y1="270" x2="300" y2="1000"/>
+    <!-- Üst Yatay Duvar -->
+    <line x1="300" y1="190" x2="2800" y2="190"/>
+    <!-- Alt Yatay Duvar -->
+    <line x1="300" y1="270" x2="2800" y2="270"/>
+  </g>
+
+  <!-- KOLONLAR (Yapısal Güçlendirme) -->
+  <g fill="#2c3e50">
+    <rect x="215" y="185" width="10" height="10"/>
+    <rect x="295" y="185" width="10" height="10"/>
+    <rect x="295" y="265" width="10" height="10"/>
+    <rect x="215" y="265" width="10" height="10"/>
+    <rect x="735" y="185" width="10" height="10"/> <!-- Merdiven yanı -->
+    <rect x="735" y="265" width="10" height="10"/>
+    <rect x="1175" y="185" width="10" height="10"/> <!-- WC yanı -->
+    <rect x="1175" y="265" width="10" height="10"/>
+    <rect x="1800" y="185" width="10" height="10"/> <!-- Yeni Kolon -->
+    <rect x="1800" y="265" width="10" height="10"/>
+    <rect x="2400" y="185" width="10" height="10"/> <!-- Yeni Kolon -->
+    <rect x="2400" y="265" width="10" height="10"/>
+  </g>
+
+  <!-- MEVCUT ODALAR (Aynı koordinatlar) -->
+  <!-- ...existing code... -->
+  
+  <!-- YENİ EKLENEN ODALAR (SAĞ TARAF) -->
+  
+  <!-- DERSLİK 130 -->
+  <rect x="1800" y="20" width="120" height="140" fill="#cfd8dc" stroke="#546e7a" stroke-width="2"/>
+  <text x="1860" y="85" text-anchor="middle" font-size="14" fill="#37474f" font-weight="bold" font-family="Arial">DERSLİK</text>
+  <text x="1860" y="105" text-anchor="middle" font-size="12" fill="#37474f" font-family="Arial">130</text>
+  <rect x="1840" y="160" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+
+  <!-- DERSLİK 129 -->
+  <rect x="1940" y="20" width="120" height="140" fill="#cfd8dc" stroke="#546e7a" stroke-width="2"/>
+  <text x="2000" y="85" text-anchor="middle" font-size="14" fill="#37474f" font-weight="bold" font-family="Arial">DERSLİK</text>
+  <text x="2000" y="105" text-anchor="middle" font-size="12" fill="#37474f" font-family="Arial">129</text>
+  <rect x="1980" y="160" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+
+  <!-- DERSLİK 128 -->
+  <rect x="2080" y="20" width="120" height="140" fill="#cfd8dc" stroke="#546e7a" stroke-width="2"/>
+  <text x="2140" y="85" text-anchor="middle" font-size="14" fill="#37474f" font-weight="bold" font-family="Arial">DERSLİK</text>
+  <text x="2140" y="105" text-anchor="middle" font-size="12" fill="#37474f" font-family="Arial">128</text>
+  <rect x="2120" y="160" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+
+  <!-- KÜTÜPHANE (Büyük Oda) -->
+  <rect x="2220" y="20" width="300" height="140" fill="#d1c4e9" stroke="#512da8" stroke-width="2"/>
+  <text x="2370" y="85" text-anchor="middle" font-size="20" fill="#311b92" font-weight="bold" font-family="Arial">KÜTÜPHANE</text>
+  <rect x="2350" y="160" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+
+  <!-- ALT SAĞ ODALAR -->
+  
+  <!-- OFİS 135 -->
+  <rect x="1800" y="280" width="100" height="150" fill="#b2dfdb" stroke="#00897b" stroke-width="2"/>
+  <text x="1850" y="345" text-anchor="middle" font-size="12" fill="#00695c" font-weight="bold" font-family="Arial">OFİS 135</text>
+  <rect x="1830" y="270" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+
+  <!-- OFİS 134 -->
+  <rect x="1920" y="280" width="100" height="150" fill="#b2dfdb" stroke="#00897b" stroke-width="2"/>
+  <text x="1970" y="345" text-anchor="middle" font-size="12" fill="#00695c" font-weight="bold" font-family="Arial">OFİS 134</text>
+  <rect x="1950" y="270" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+
+  <!-- KONFERANS SALONU (Büyük) -->
+  <rect x="2040" y="280" width="400" height="200" fill="#ffccbc" stroke="#bf360c" stroke-width="2"/>
+  <text x="2240" y="370" text-anchor="middle" font-size="22" fill="#bf360c" font-weight="bold" font-family="Arial">KONFERANS SALONU</text>
+  <rect x="2220" y="270" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+
+  <!-- YENİ EKLENEN ODALAR (ALT TARAFA UZANTI) -->
+  
+  <!-- KAFETERYA -->
+  <rect x="20" y="620" width="180" height="200" fill="#f8bbd0" stroke="#c2185b" stroke-width="2"/>
+  <text x="110" y="710" text-anchor="middle" font-size="18" fill="#880e4f" font-weight="bold" font-family="Arial">KAFETERYA</text>
+  <rect x="200" y="650" width="20" height="40" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+
+  <!-- GİRİŞ HALL -->
+  <rect x="220" y="850" width="300" height="150" fill="#e1bee7" stroke="#7b1fa2" stroke-width="2"/>
+  <text x="370" y="920" text-anchor="middle" font-size="24" fill="#4a148c" font-weight="bold" font-family="Arial">ANA GİRİŞ</text>
+  <path d="M220 850 L520 850" stroke="#fff" stroke-width="4" stroke-dasharray="10,10"/> <!-- Açık alan -->
+
+
+  
+  <!-- DERSLİK 160 -->
+  <rect x="320" y="20" width="120" height="140" fill="#cfd8dc" stroke="#546e7a" stroke-width="2"/>
+  <text x="380" y="85" text-anchor="middle" font-size="14" fill="#37474f" font-weight="bold" font-family="Arial">DERSLİK</text>
+  <text x="380" y="105" text-anchor="middle" font-size="12" fill="#37474f" font-family="Arial">160</text>
+  <rect x="360" y="160" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/> <!-- Kapı -->
+  <path d="M360 160 Q380 190 400 160" fill="none" stroke="#b0bec5" stroke-width="1" stroke-dasharray="2,2"/> <!-- Kapı açılış yönü -->
+  
+  <!-- DERSLİK 159 -->
+  <rect x="460" y="20" width="120" height="140" fill="#cfd8dc" stroke="#546e7a" stroke-width="2"/>
+  <text x="520" y="85" text-anchor="middle" font-size="14" fill="#37474f" font-weight="bold" font-family="Arial">DERSLİK</text>
+  <text x="520" y="105" text-anchor="middle" font-size="12" fill="#37474f" font-family="Arial">159</text>
+  <rect x="500" y="160" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+  
+  <!-- DERSLİK 157 -->
+  <rect x="600" y="20" width="120" height="140" fill="#cfd8dc" stroke="#546e7a" stroke-width="2"/>
+  <text x="660" y="85" text-anchor="middle" font-size="14" fill="#37474f" font-weight="bold" font-family="Arial">DERSLİK</text>
+  <text x="660" y="105" text-anchor="middle" font-size="12" fill="#37474f" font-family="Arial">157</text>
+  <rect x="640" y="160" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+  
+  <!-- Merdiven -->
+  <rect x="740" y="20" width="50" height="140" fill="#e0e0e0" stroke="#9e9e9e" stroke-width="2"/>
+  <g stroke="#757575" stroke-width="2">
+    <line x1="745" y1="30" x2="785" y2="30"/>
+    <line x1="745" y1="45" x2="785" y2="45"/>
+    <line x1="745" y1="60" x2="785" y2="60"/>
+    <line x1="745" y1="75" x2="785" y2="75"/>
+    <line x1="745" y1="90" x2="785" y2="90"/>
+    <line x1="745" y1="105" x2="785" y2="105"/>
+    <line x1="745" y1="120" x2="785" y2="120"/>
+    <line x1="745" y1="135" x2="785" y2="135"/>
+    <line x1="745" y1="150" x2="785" y2="150"/>
+  </g>
+  <text x="765" y="15" text-anchor="middle" font-size="10" fill="#666">MERDİVEN</text>
+  
+  <!-- KİMYA LAB 156 -->
+  <rect x="810" y="20" width="180" height="140" fill="#b2dfdb" stroke="#00897b" stroke-width="2"/>
+  <text x="900" y="80" text-anchor="middle" font-size="16" fill="#00695c" font-weight="bold" font-family="Arial">KİMYA LAB.</text>
+  <text x="900" y="100" text-anchor="middle" font-size="14" fill="#00695c" font-family="Arial">156</text>
+  <rect x="880" y="160" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+  
+  <!-- MODELLEME OPT. LAB -->
+  <rect x="1010" y="20" width="150" height="140" fill="#b2dfdb" stroke="#00897b" stroke-width="2"/>
+  <text x="1085" y="75" text-anchor="middle" font-size="13" fill="#00695c" font-weight="bold" font-family="Arial">MODELLEME</text>
+  <text x="1085" y="95" text-anchor="middle" font-size="13" fill="#00695c" font-weight="bold" font-family="Arial">OPT. LAB</text>
+  <text x="1085" y="115" text-anchor="middle" font-size="12" fill="#00695c" font-family="Arial">155</text>
+  <rect x="1065" y="160" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+  
+  <!-- WC -->
+  <rect x="1180" y="20" width="70" height="140" fill="#eeeeee" stroke="#bdbdbd" stroke-width="2"/>
+  <text x="1215" y="90" text-anchor="middle" font-size="16" fill="#616161" font-weight="bold" font-family="Arial">WC</text>
+  <rect x="1195" y="160" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+  
+  <!-- MAKET ATÖL 152 -->
+  <rect x="1270" y="20" width="150" height="140" fill="#b2dfdb" stroke="#00897b" stroke-width="2"/>
+  <text x="1345" y="80" text-anchor="middle" font-size="14" fill="#00695c" font-weight="bold" font-family="Arial">MAKET ATÖL.</text>
+  <text x="1345" y="100" text-anchor="middle" font-size="12" fill="#00695c" font-family="Arial">152</text>
+  <rect x="1325" y="160" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+  
+  <!-- TEMEL ELEK. LAB 151 -->
+  <rect x="1440" y="20" width="180" height="140" fill="#b2dfdb" stroke="#00897b" stroke-width="2"/>
+  <text x="1530" y="75" text-anchor="middle" font-size="14" fill="#00695c" font-weight="bold" font-family="Arial">TEMEL ELEK.</text>
+  <text x="1530" y="95" text-anchor="middle" font-size="14" fill="#00695c" font-weight="bold" font-family="Arial">LAB.</text>
+  <text x="1530" y="115" text-anchor="middle" font-size="12" fill="#00695c" font-family="Arial">151</text>
+  <rect x="1510" y="160" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+  
+  <!-- KATMA OFİSİ 131-1 -->
+  <rect x="1640" y="20" width="140" height="140" fill="#80cbc4" stroke="#00695c" stroke-width="2"/>
+  <text x="1710" y="80" text-anchor="middle" font-size="13" fill="#004d40" font-weight="bold" font-family="Arial">KATMA</text>
+  <text x="1710" y="100" text-anchor="middle" font-size="13" fill="#004d40" font-weight="bold" font-family="Arial">OFİSİ</text>
+  <text x="1710" y="120" text-anchor="middle" font-size="11" fill="#004d40" font-family="Arial">131-1</text>
+  <rect x="1690" y="160" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+  
+  <!-- KORİDOR YAZILARI -->
+  <text x="1100" y="235" text-anchor="middle" font-size="24" fill="#e0e0e0" font-weight="bold" font-family="Arial" letter-spacing="5">KORİDOR</text>
+  <text x="260" y="300" text-anchor="middle" font-size="24" fill="#e0e0e0" font-weight="bold" font-family="Arial" letter-spacing="5" transform="rotate(-90 260 300)">KORİDOR</text>
+  
+  <!-- SOL TARAF ODALAR -->
+  
+  <!-- YEMEKHANE -->
+  <rect x="20" y="20" width="180" height="260" fill="#dcedc8" stroke="#689f38" stroke-width="2"/>
+  <text x="110" y="135" text-anchor="middle" font-size="20" fill="#33691e" font-weight="bold" font-family="Arial">YEMEKHANE</text>
+  <rect x="200" y="130" width="20" height="40" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+  
+  <!-- MUTFAK -->
+  <rect x="20" y="300" width="180" height="160" fill="#ffe0b2" stroke="#f57c00" stroke-width="2"/>
+  <text x="110" y="370" text-anchor="middle" font-size="20" fill="#e65100" font-weight="bold" font-family="Arial">MUTFAK</text>
+  <rect x="200" y="365" width="20" height="40" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+  
+  <!-- DEPO -->
+  <rect x="20" y="480" width="180" height="100" fill="#f5f5f5" stroke="#757575" stroke-width="2"/>
+  <text x="110" y="535" text-anchor="middle" font-size="18" fill="#616161" font-weight="bold" font-family="Arial">DEPO</text>
+  <rect x="200" y="515" width="20" height="40" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+  
+  <!-- GİRİŞ (Yeni Eklenen) -->
+  <rect x="220" y="580" width="80" height="20" fill="#e3f2fd" stroke="#2196f3" stroke-width="1"/>
+  <text x="260" y="595" text-anchor="middle" font-size="10" fill="#1565c0" font-weight="bold">GİRİŞ</text>
+  <path d="M220 600 L240 580 M240 600 L260 580 M260 600 L280 580 M280 600 L300 580" stroke="#2196f3" stroke-width="1" opacity="0.5"/>
+
+  <!-- ALT SIRA ODALAR -->
+  
+  <!-- ARELİ İLETİŞİM USAM 141-1 -->
+  <rect x="320" y="280" width="120" height="150" fill="#c8e6c9" stroke="#388e3c" stroke-width="2"/>
+  <text x="380" y="330" text-anchor="middle" font-size="11" fill="#1b5e20" font-weight="bold" font-family="Arial">ARELİ</text>
+  <text x="380" y="345" text-anchor="middle" font-size="11" fill="#1b5e20" font-weight="bold" font-family="Arial">İLETİŞİM</text>
+  <text x="380" y="360" text-anchor="middle" font-size="11" fill="#1b5e20" font-weight="bold" font-family="Arial">USAM</text>
+  <text x="380" y="380" text-anchor="middle" font-size="10" fill="#1b5e20" font-family="Arial">141-1</text>
+  <rect x="360" y="270" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+  
+  <!-- DERSLİK 142 -->
+  <rect x="460" y="280" width="120" height="150" fill="#cfd8dc" stroke="#546e7a" stroke-width="2"/>
+  <text x="520" y="350" text-anchor="middle" font-size="14" fill="#37474f" font-weight="bold" font-family="Arial">DERSLİK</text>
+  <text x="520" y="370" text-anchor="middle" font-size="12" fill="#37474f" font-family="Arial">142</text>
+  <rect x="500" y="270" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+  
+  <!-- DERSLİK 143 -->
+  <rect x="600" y="280" width="120" height="150" fill="#cfd8dc" stroke="#546e7a" stroke-width="2"/>
+  <text x="660" y="350" text-anchor="middle" font-size="14" fill="#37474f" font-weight="bold" font-family="Arial">DERSLİK</text>
+  <text x="660" y="370" text-anchor="middle" font-size="12" fill="#37474f" font-family="Arial">143</text>
+  <rect x="640" y="270" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+  
+  <!-- DERSLİK 144 -->
+  <rect x="740" y="280" width="120" height="150" fill="#cfd8dc" stroke="#546e7a" stroke-width="2"/>
+  <text x="800" y="350" text-anchor="middle" font-size="14" fill="#37474f" font-weight="bold" font-family="Arial">DERSLİK</text>
+  <text x="800" y="370" text-anchor="middle" font-size="12" fill="#37474f" font-family="Arial">144</text>
+  <rect x="780" y="270" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+  
+  <!-- MÜH. ÖĞR. ÇAL. OFİSİ 145 -->
+  <rect x="880" y="280" width="100" height="150" fill="#cfd8dc" stroke="#455a64" stroke-width="2"/>
+  <text x="930" y="335" text-anchor="middle" font-size="11" fill="#263238" font-weight="bold" font-family="Arial">MÜH. ÖĞR.</text>
+  <text x="930" y="350" text-anchor="middle" font-size="11" fill="#263238" font-weight="bold" font-family="Arial">ÇAL. OFİSİ</text>
+  <text x="930" y="370" text-anchor="middle" font-size="10" fill="#263238" font-family="Arial">145</text>
+  <rect x="910" y="270" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+  
+  <!-- FİZİK LAB. 146 -->
+  <rect x="1000" y="280" width="180" height="150" fill="#b2dfdb" stroke="#00897b" stroke-width="2"/>
+  <text x="1090" y="345" text-anchor="middle" font-size="16" fill="#00695c" font-weight="bold" font-family="Arial">FİZİK LAB.</text>
+  <text x="1090" y="370" text-anchor="middle" font-size="14" fill="#00695c" font-family="Arial">146</text>
+  <rect x="1070" y="270" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+  
+  <!-- BÜYÜK VERİ VE IOT LAB 147 -->
+  <rect x="1200" y="280" width="160" height="150" fill="#b2dfdb" stroke="#00897b" stroke-width="2"/>
+  <text x="1280" y="335" text-anchor="middle" font-size="13" fill="#00695c" font-weight="bold" font-family="Arial">BÜYÜK VERİ</text>
+  <text x="1280" y="355" text-anchor="middle" font-size="13" fill="#00695c" font-weight="bold" font-family="Arial">VE IOT LAB</text>
+  <text x="1280" y="375" text-anchor="middle" font-size="12" fill="#00695c" font-family="Arial">147</text>
+  <rect x="1260" y="270" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+  
+  <!-- ARAŞTIRMA GÖREV GİRİŞİ 148 -->
+  <rect x="1380" y="280" width="100" height="150" fill="#cfd8dc" stroke="#37474f" stroke-width="2"/>
+  <text x="1430" y="330" text-anchor="middle" font-size="11" fill="#263238" font-weight="bold" font-family="Arial">ARAŞTIRMA</text>
+  <text x="1430" y="345" text-anchor="middle" font-size="11" fill="#263238" font-weight="bold" font-family="Arial">GÖREV</text>
+  <text x="1430" y="360" text-anchor="middle" font-size="11" fill="#263238" font-weight="bold" font-family="Arial">GİRİŞİ</text>
+  <text x="1430" y="380" text-anchor="middle" font-size="10" fill="#263238" font-family="Arial">148</text>
+  <rect x="1410" y="270" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+  
+  <!-- ÖĞRENCİ PROJ. OFİSİ 149 -->
+  <rect x="1500" y="280" width="130" height="150" fill="#b2dfdb" stroke="#00897b" stroke-width="2"/>
+  <text x="1565" y="335" text-anchor="middle" font-size="12" fill="#00695c" font-weight="bold" font-family="Arial">ÖĞRENCİ</text>
+  <text x="1565" y="355" text-anchor="middle" font-size="12" fill="#00695c" font-weight="bold" font-family="Arial">PROJ. OFİSİ</text>
+  <text x="1565" y="375" text-anchor="middle" font-size="11" fill="#00695c" font-family="Arial">149</text>
+  <rect x="1545" y="270" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+  
+  <!-- KALİBRASYON VE UYGULAMALARI LAB 150 -->
+  <rect x="1650" y="280" width="130" height="150" fill="#b2dfdb" stroke="#00897b" stroke-width="2"/>
+  <text x="1715" y="325" text-anchor="middle" font-size="11" fill="#00695c" font-weight="bold" font-family="Arial">KALİBRASYON</text>
+  <text x="1715" y="340" text-anchor="middle" font-size="11" fill="#00695c" font-weight="bold" font-family="Arial">VE</text>
+  <text x="1715" y="355" text-anchor="middle" font-size="11" fill="#00695c" font-weight="bold" font-family="Arial">UYGULAMALARI</text>
+  <text x="1715" y="370" text-anchor="middle" font-size="11" fill="#00695c" font-weight="bold" font-family="Arial">LAB</text>
+  <text x="1715" y="390" text-anchor="middle" font-size="10" fill="#00695c" font-family="Arial">150</text>
+  <rect x="1695" y="270" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
+  
+</svg>
