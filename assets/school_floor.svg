@@ -1,271 +1,306 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="2600" height="1200" viewBox="0 0 2600 1200" xmlns="http://www.w3.org/2000/svg">
-  <!-- Arka Plan -->
-  <rect x="0" y="0" width="2600" height="1200" fill="#f0f2f5"/>
-  
-  <!-- KORİDORLAR (Zemin) -->
-  <!-- Dikey Koridor (Uzatılmış) -->
-  <rect x="220" y="0" width="80" height="1000" fill="#ffffff"/>
-  <!-- Yatay Koridor (Uzatılmış) -->
-  <rect x="300" y="190" width="2500" height="80" fill="#ffffff"/>
-  
-  <!-- KORİDOR DUVARLARI (Ana Yapı) -->
-  <g stroke="#2c3e50" stroke-width="6" fill="none" stroke-linecap="round">
-    <!-- Sol Dikey Duvar -->
-    <line x1="220" y1="0" x2="220" y2="1000"/>
-    <!-- Sağ Dikey Duvar (Üst) -->
-    <line x1="300" y1="0" x2="300" y2="190"/>
-    <!-- Sağ Dikey Duvar (Alt - Uzatılmış) -->
-    <line x1="300" y1="270" x2="300" y2="1000"/>
-    <!-- Üst Yatay Duvar -->
-    <line x1="300" y1="190" x2="2800" y2="190"/>
-    <!-- Alt Yatay Duvar -->
-    <line x1="300" y1="270" x2="2800" y2="270"/>
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="2000" height="800" viewBox="0 0 2000 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .room { stroke-width: 2; }
+      .classroom { fill: #cfd8dc; stroke: #546e7a; }
+      .lab { fill: #b2dfdb; stroke: #00897b; }
+      .office { fill: #c8e6c9; stroke: #388e3c; }
+      .wc { fill: #ffe0b2; stroke: #f57c00; }
+      .cafeteria { fill: #dcedc8; stroke: #689f38; }
+      .stairs { fill: #e0e0e0; stroke: #9e9e9e; }
+      .corridor { fill: #ffffff; }
+      .door { fill: #fff; stroke: #b0bec5; stroke-width: 1; }
+      .beacon { fill: #d8d8d8; stroke: #000000; stroke-width: 1; }
+      .beacon-label { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: #333; }
+      .room-label { font-family: Arial, sans-serif; font-weight: bold; }
+      .room-number { font-family: Arial, sans-serif; }
+    </style>
+  </defs>
+  <rect width="2000" height="800" fill="#f0f2f5" x="0.172" y="-0.164"/>
+  <rect id="corridor-main" data-type="corridor" data-name="Ana Koridor" x="200" y="180" width="1450.58" height="90" class="corridor" fill="#ffffff" style=""/>
+  <rect id="corridor-left" data-type="corridor" data-name="Sol Koridor" x="200" y="270" width="90" height="430" class="corridor" fill="#ffffff"/>
+  <g stroke="#2c3e50" stroke-width="4" fill="none" style="" transform="matrix(0.936001, -0.000008, 0, 1, 12.799901, 0.00896)">
+    <line x1="200" y1="180" x2="1750" y2="180"/>
+    <line x1="290" y1="270" x2="1750" y2="270"/>
+    <line x1="200" y1="180" x2="200" y2="700"/>
+    <line x1="290" y1="270" x2="290" y2="700"/>
   </g>
-
-  <!-- KOLONLAR (Yapısal Güçlendirme) -->
-  <g fill="#2c3e50">
-    <rect x="215" y="185" width="10" height="10"/>
-    <rect x="295" y="185" width="10" height="10"/>
-    <rect x="295" y="265" width="10" height="10"/>
-    <rect x="215" y="265" width="10" height="10"/>
-    <rect x="735" y="185" width="10" height="10"/> <!-- Merdiven yanı -->
-    <rect x="735" y="265" width="10" height="10"/>
-    <rect x="1175" y="185" width="10" height="10"/> <!-- WC yanı -->
-    <rect x="1175" y="265" width="10" height="10"/>
-    <rect x="1800" y="185" width="10" height="10"/> <!-- Yeni Kolon -->
-    <rect x="1800" y="265" width="10" height="10"/>
-    <rect x="2400" y="185" width="10" height="10"/> <!-- Yeni Kolon -->
-    <rect x="2400" y="265" width="10" height="10"/>
+  <text x="900" y="235" text-anchor="middle" font-size="22" fill="#bdbdbd" font-weight="bold" letter-spacing="10" style="white-space: pre;">KORİDOR</text>
+  <text x="245" y="500" text-anchor="middle" font-size="16" fill="#bdbdbd" font-weight="bold" letter-spacing="3" transform="rotate(-90, 245, 500)" style="white-space: pre;">KORİDOR</text>
+  <g id="room-161" data-room-id="161" data-room-name="TTO Ofisi" data-type="office">
+    <rect x="200" y="40" width="100" height="140" class="room office"/>
+    <text x="250" y="100" text-anchor="middle" font-size="14" fill="#1b5e20" font-weight="bold" style="white-space: pre;">TTO</text>
+    <text x="250" y="118" text-anchor="middle" font-size="12" fill="#1b5e20" style="white-space: pre;">Ofisi</text>
+    <text x="250" y="140" text-anchor="middle" font-size="11" fill="#1b5e20" style="white-space: pre;">161</text>
+    <rect x="230" y="165" width="40" height="20" class="door"/>
   </g>
-
-  <!-- MEVCUT ODALAR (Aynı koordinatlar) -->
-  <!-- ...existing code... -->
-  
-  <!-- YENİ EKLENEN ODALAR (SAĞ TARAF) -->
-  
-  <!-- DERSLİK 130 -->
-  <rect x="1800" y="20" width="120" height="140" fill="#cfd8dc" stroke="#546e7a" stroke-width="2"/>
-  <text x="1860" y="85" text-anchor="middle" font-size="14" fill="#37474f" font-weight="bold" font-family="Arial">DERSLİK</text>
-  <text x="1860" y="105" text-anchor="middle" font-size="12" fill="#37474f" font-family="Arial">130</text>
-  <rect x="1840" y="160" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-
-  <!-- DERSLİK 129 -->
-  <rect x="1940" y="20" width="120" height="140" fill="#cfd8dc" stroke="#546e7a" stroke-width="2"/>
-  <text x="2000" y="85" text-anchor="middle" font-size="14" fill="#37474f" font-weight="bold" font-family="Arial">DERSLİK</text>
-  <text x="2000" y="105" text-anchor="middle" font-size="12" fill="#37474f" font-family="Arial">129</text>
-  <rect x="1980" y="160" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-
-  <!-- DERSLİK 128 -->
-  <rect x="2080" y="20" width="120" height="140" fill="#cfd8dc" stroke="#546e7a" stroke-width="2"/>
-  <text x="2140" y="85" text-anchor="middle" font-size="14" fill="#37474f" font-weight="bold" font-family="Arial">DERSLİK</text>
-  <text x="2140" y="105" text-anchor="middle" font-size="12" fill="#37474f" font-family="Arial">128</text>
-  <rect x="2120" y="160" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-
-  <!-- KÜTÜPHANE (Büyük Oda) -->
-  <rect x="2220" y="20" width="300" height="140" fill="#d1c4e9" stroke="#512da8" stroke-width="2"/>
-  <text x="2370" y="85" text-anchor="middle" font-size="20" fill="#311b92" font-weight="bold" font-family="Arial">KÜTÜPHANE</text>
-  <rect x="2350" y="160" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-
-  <!-- ALT SAĞ ODALAR -->
-  
-  <!-- OFİS 135 -->
-  <rect x="1800" y="280" width="100" height="150" fill="#b2dfdb" stroke="#00897b" stroke-width="2"/>
-  <text x="1850" y="345" text-anchor="middle" font-size="12" fill="#00695c" font-weight="bold" font-family="Arial">OFİS 135</text>
-  <rect x="1830" y="270" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-
-  <!-- OFİS 134 -->
-  <rect x="1920" y="280" width="100" height="150" fill="#b2dfdb" stroke="#00897b" stroke-width="2"/>
-  <text x="1970" y="345" text-anchor="middle" font-size="12" fill="#00695c" font-weight="bold" font-family="Arial">OFİS 134</text>
-  <rect x="1950" y="270" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-
-  <!-- KONFERANS SALONU (Büyük) -->
-  <rect x="2040" y="280" width="400" height="200" fill="#ffccbc" stroke="#bf360c" stroke-width="2"/>
-  <text x="2240" y="370" text-anchor="middle" font-size="22" fill="#bf360c" font-weight="bold" font-family="Arial">KONFERANS SALONU</text>
-  <rect x="2220" y="270" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-
-  <!-- YENİ EKLENEN ODALAR (ALT TARAFA UZANTI) -->
-  
-  <!-- KAFETERYA -->
-  <rect x="20" y="620" width="180" height="200" fill="#f8bbd0" stroke="#c2185b" stroke-width="2"/>
-  <text x="110" y="710" text-anchor="middle" font-size="18" fill="#880e4f" font-weight="bold" font-family="Arial">KAFETERYA</text>
-  <rect x="200" y="650" width="20" height="40" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-
-  <!-- GİRİŞ HALL -->
-  <rect x="220" y="850" width="300" height="150" fill="#e1bee7" stroke="#7b1fa2" stroke-width="2"/>
-  <text x="370" y="920" text-anchor="middle" font-size="24" fill="#4a148c" font-weight="bold" font-family="Arial">ANA GİRİŞ</text>
-  <path d="M220 850 L520 850" stroke="#fff" stroke-width="4" stroke-dasharray="10,10"/> <!-- Açık alan -->
-
-
-  
-  <!-- DERSLİK 160 -->
-  <rect x="320" y="20" width="120" height="140" fill="#cfd8dc" stroke="#546e7a" stroke-width="2"/>
-  <text x="380" y="85" text-anchor="middle" font-size="14" fill="#37474f" font-weight="bold" font-family="Arial">DERSLİK</text>
-  <text x="380" y="105" text-anchor="middle" font-size="12" fill="#37474f" font-family="Arial">160</text>
-  <rect x="360" y="160" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/> <!-- Kapı -->
-  <path d="M360 160 Q380 190 400 160" fill="none" stroke="#b0bec5" stroke-width="1" stroke-dasharray="2,2"/> <!-- Kapı açılış yönü -->
-  
-  <!-- DERSLİK 159 -->
-  <rect x="460" y="20" width="120" height="140" fill="#cfd8dc" stroke="#546e7a" stroke-width="2"/>
-  <text x="520" y="85" text-anchor="middle" font-size="14" fill="#37474f" font-weight="bold" font-family="Arial">DERSLİK</text>
-  <text x="520" y="105" text-anchor="middle" font-size="12" fill="#37474f" font-family="Arial">159</text>
-  <rect x="500" y="160" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-  
-  <!-- DERSLİK 157 -->
-  <rect x="600" y="20" width="120" height="140" fill="#cfd8dc" stroke="#546e7a" stroke-width="2"/>
-  <text x="660" y="85" text-anchor="middle" font-size="14" fill="#37474f" font-weight="bold" font-family="Arial">DERSLİK</text>
-  <text x="660" y="105" text-anchor="middle" font-size="12" fill="#37474f" font-family="Arial">157</text>
-  <rect x="640" y="160" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-  
-  <!-- Merdiven -->
-  <rect x="740" y="20" width="50" height="140" fill="#e0e0e0" stroke="#9e9e9e" stroke-width="2"/>
-  <g stroke="#757575" stroke-width="2">
-    <line x1="745" y1="30" x2="785" y2="30"/>
-    <line x1="745" y1="45" x2="785" y2="45"/>
-    <line x1="745" y1="60" x2="785" y2="60"/>
-    <line x1="745" y1="75" x2="785" y2="75"/>
-    <line x1="745" y1="90" x2="785" y2="90"/>
-    <line x1="745" y1="105" x2="785" y2="105"/>
-    <line x1="745" y1="120" x2="785" y2="120"/>
-    <line x1="745" y1="135" x2="785" y2="135"/>
-    <line x1="745" y1="150" x2="785" y2="150"/>
+  <g id="room-160" data-room-id="160" data-room-name="Derslik" data-type="classroom">
+    <rect x="310" y="40" width="120" height="140" class="room classroom"/>
+    <text x="370" y="100" text-anchor="middle" font-size="14" fill="#37474f" font-weight="bold" style="white-space: pre;">DERSLİK</text>
+    <text x="370" y="120" text-anchor="middle" font-size="12" fill="#37474f" style="white-space: pre;">160</text>
+    <rect x="350" y="165" width="40" height="20" class="door"/>
   </g>
-  <text x="765" y="15" text-anchor="middle" font-size="10" fill="#666">MERDİVEN</text>
-  
-  <!-- KİMYA LAB 156 -->
-  <rect x="810" y="20" width="180" height="140" fill="#b2dfdb" stroke="#00897b" stroke-width="2"/>
-  <text x="900" y="80" text-anchor="middle" font-size="16" fill="#00695c" font-weight="bold" font-family="Arial">KİMYA LAB.</text>
-  <text x="900" y="100" text-anchor="middle" font-size="14" fill="#00695c" font-family="Arial">156</text>
-  <rect x="880" y="160" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-  
-  <!-- MODELLEME OPT. LAB -->
-  <rect x="1010" y="20" width="150" height="140" fill="#b2dfdb" stroke="#00897b" stroke-width="2"/>
-  <text x="1085" y="75" text-anchor="middle" font-size="13" fill="#00695c" font-weight="bold" font-family="Arial">MODELLEME</text>
-  <text x="1085" y="95" text-anchor="middle" font-size="13" fill="#00695c" font-weight="bold" font-family="Arial">OPT. LAB</text>
-  <text x="1085" y="115" text-anchor="middle" font-size="12" fill="#00695c" font-family="Arial">155</text>
-  <rect x="1065" y="160" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-  
-  <!-- WC -->
-  <rect x="1180" y="20" width="70" height="140" fill="#eeeeee" stroke="#bdbdbd" stroke-width="2"/>
-  <text x="1215" y="90" text-anchor="middle" font-size="16" fill="#616161" font-weight="bold" font-family="Arial">WC</text>
-  <rect x="1195" y="160" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-  
-  <!-- MAKET ATÖL 152 -->
-  <rect x="1270" y="20" width="150" height="140" fill="#b2dfdb" stroke="#00897b" stroke-width="2"/>
-  <text x="1345" y="80" text-anchor="middle" font-size="14" fill="#00695c" font-weight="bold" font-family="Arial">MAKET ATÖL.</text>
-  <text x="1345" y="100" text-anchor="middle" font-size="12" fill="#00695c" font-family="Arial">152</text>
-  <rect x="1325" y="160" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-  
-  <!-- TEMEL ELEK. LAB 151 -->
-  <rect x="1440" y="20" width="180" height="140" fill="#b2dfdb" stroke="#00897b" stroke-width="2"/>
-  <text x="1530" y="75" text-anchor="middle" font-size="14" fill="#00695c" font-weight="bold" font-family="Arial">TEMEL ELEK.</text>
-  <text x="1530" y="95" text-anchor="middle" font-size="14" fill="#00695c" font-weight="bold" font-family="Arial">LAB.</text>
-  <text x="1530" y="115" text-anchor="middle" font-size="12" fill="#00695c" font-family="Arial">151</text>
-  <rect x="1510" y="160" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-  
-  <!-- KATMA OFİSİ 131-1 -->
-  <rect x="1640" y="20" width="140" height="140" fill="#80cbc4" stroke="#00695c" stroke-width="2"/>
-  <text x="1710" y="80" text-anchor="middle" font-size="13" fill="#004d40" font-weight="bold" font-family="Arial">KATMA</text>
-  <text x="1710" y="100" text-anchor="middle" font-size="13" fill="#004d40" font-weight="bold" font-family="Arial">OFİSİ</text>
-  <text x="1710" y="120" text-anchor="middle" font-size="11" fill="#004d40" font-family="Arial">131-1</text>
-  <rect x="1690" y="160" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-  
-  <!-- KORİDOR YAZILARI -->
-  <text x="1100" y="235" text-anchor="middle" font-size="24" fill="#e0e0e0" font-weight="bold" font-family="Arial" letter-spacing="5">KORİDOR</text>
-  <text x="260" y="300" text-anchor="middle" font-size="24" fill="#e0e0e0" font-weight="bold" font-family="Arial" letter-spacing="5" transform="rotate(-90 260 300)">KORİDOR</text>
-  
-  <!-- SOL TARAF ODALAR -->
-  
-  <!-- YEMEKHANE -->
-  <rect x="20" y="20" width="180" height="260" fill="#dcedc8" stroke="#689f38" stroke-width="2"/>
-  <text x="110" y="135" text-anchor="middle" font-size="20" fill="#33691e" font-weight="bold" font-family="Arial">YEMEKHANE</text>
-  <rect x="200" y="130" width="20" height="40" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-  
-  <!-- MUTFAK -->
-  <rect x="20" y="300" width="180" height="160" fill="#ffe0b2" stroke="#f57c00" stroke-width="2"/>
-  <text x="110" y="370" text-anchor="middle" font-size="20" fill="#e65100" font-weight="bold" font-family="Arial">MUTFAK</text>
-  <rect x="200" y="365" width="20" height="40" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-  
-  <!-- DEPO -->
-  <rect x="20" y="480" width="180" height="100" fill="#f5f5f5" stroke="#757575" stroke-width="2"/>
-  <text x="110" y="535" text-anchor="middle" font-size="18" fill="#616161" font-weight="bold" font-family="Arial">DEPO</text>
-  <rect x="200" y="515" width="20" height="40" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-  
-  <!-- GİRİŞ (Yeni Eklenen) -->
-  <rect x="220" y="580" width="80" height="20" fill="#e3f2fd" stroke="#2196f3" stroke-width="1"/>
-  <text x="260" y="595" text-anchor="middle" font-size="10" fill="#1565c0" font-weight="bold">GİRİŞ</text>
-  <path d="M220 600 L240 580 M240 600 L260 580 M260 600 L280 580 M280 600 L300 580" stroke="#2196f3" stroke-width="1" opacity="0.5"/>
-
-  <!-- ALT SIRA ODALAR -->
-  
-  <!-- ARELİ İLETİŞİM USAM 141-1 -->
-  <rect x="320" y="280" width="120" height="150" fill="#c8e6c9" stroke="#388e3c" stroke-width="2"/>
-  <text x="380" y="330" text-anchor="middle" font-size="11" fill="#1b5e20" font-weight="bold" font-family="Arial">ARELİ</text>
-  <text x="380" y="345" text-anchor="middle" font-size="11" fill="#1b5e20" font-weight="bold" font-family="Arial">İLETİŞİM</text>
-  <text x="380" y="360" text-anchor="middle" font-size="11" fill="#1b5e20" font-weight="bold" font-family="Arial">USAM</text>
-  <text x="380" y="380" text-anchor="middle" font-size="10" fill="#1b5e20" font-family="Arial">141-1</text>
-  <rect x="360" y="270" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-  
-  <!-- DERSLİK 142 -->
-  <rect x="460" y="280" width="120" height="150" fill="#cfd8dc" stroke="#546e7a" stroke-width="2"/>
-  <text x="520" y="350" text-anchor="middle" font-size="14" fill="#37474f" font-weight="bold" font-family="Arial">DERSLİK</text>
-  <text x="520" y="370" text-anchor="middle" font-size="12" fill="#37474f" font-family="Arial">142</text>
-  <rect x="500" y="270" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-  
-  <!-- DERSLİK 143 -->
-  <rect x="600" y="280" width="120" height="150" fill="#cfd8dc" stroke="#546e7a" stroke-width="2"/>
-  <text x="660" y="350" text-anchor="middle" font-size="14" fill="#37474f" font-weight="bold" font-family="Arial">DERSLİK</text>
-  <text x="660" y="370" text-anchor="middle" font-size="12" fill="#37474f" font-family="Arial">143</text>
-  <rect x="640" y="270" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-  
-  <!-- DERSLİK 144 -->
-  <rect x="740" y="280" width="120" height="150" fill="#cfd8dc" stroke="#546e7a" stroke-width="2"/>
-  <text x="800" y="350" text-anchor="middle" font-size="14" fill="#37474f" font-weight="bold" font-family="Arial">DERSLİK</text>
-  <text x="800" y="370" text-anchor="middle" font-size="12" fill="#37474f" font-family="Arial">144</text>
-  <rect x="780" y="270" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-  
-  <!-- MÜH. ÖĞR. ÇAL. OFİSİ 145 -->
-  <rect x="880" y="280" width="100" height="150" fill="#cfd8dc" stroke="#455a64" stroke-width="2"/>
-  <text x="930" y="335" text-anchor="middle" font-size="11" fill="#263238" font-weight="bold" font-family="Arial">MÜH. ÖĞR.</text>
-  <text x="930" y="350" text-anchor="middle" font-size="11" fill="#263238" font-weight="bold" font-family="Arial">ÇAL. OFİSİ</text>
-  <text x="930" y="370" text-anchor="middle" font-size="10" fill="#263238" font-family="Arial">145</text>
-  <rect x="910" y="270" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-  
-  <!-- FİZİK LAB. 146 -->
-  <rect x="1000" y="280" width="180" height="150" fill="#b2dfdb" stroke="#00897b" stroke-width="2"/>
-  <text x="1090" y="345" text-anchor="middle" font-size="16" fill="#00695c" font-weight="bold" font-family="Arial">FİZİK LAB.</text>
-  <text x="1090" y="370" text-anchor="middle" font-size="14" fill="#00695c" font-family="Arial">146</text>
-  <rect x="1070" y="270" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-  
-  <!-- BÜYÜK VERİ VE IOT LAB 147 -->
-  <rect x="1200" y="280" width="160" height="150" fill="#b2dfdb" stroke="#00897b" stroke-width="2"/>
-  <text x="1280" y="335" text-anchor="middle" font-size="13" fill="#00695c" font-weight="bold" font-family="Arial">BÜYÜK VERİ</text>
-  <text x="1280" y="355" text-anchor="middle" font-size="13" fill="#00695c" font-weight="bold" font-family="Arial">VE IOT LAB</text>
-  <text x="1280" y="375" text-anchor="middle" font-size="12" fill="#00695c" font-family="Arial">147</text>
-  <rect x="1260" y="270" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-  
-  <!-- ARAŞTIRMA GÖREV GİRİŞİ 148 -->
-  <rect x="1380" y="280" width="100" height="150" fill="#cfd8dc" stroke="#37474f" stroke-width="2"/>
-  <text x="1430" y="330" text-anchor="middle" font-size="11" fill="#263238" font-weight="bold" font-family="Arial">ARAŞTIRMA</text>
-  <text x="1430" y="345" text-anchor="middle" font-size="11" fill="#263238" font-weight="bold" font-family="Arial">GÖREV</text>
-  <text x="1430" y="360" text-anchor="middle" font-size="11" fill="#263238" font-weight="bold" font-family="Arial">GİRİŞİ</text>
-  <text x="1430" y="380" text-anchor="middle" font-size="10" fill="#263238" font-family="Arial">148</text>
-  <rect x="1410" y="270" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-  
-  <!-- ÖĞRENCİ PROJ. OFİSİ 149 -->
-  <rect x="1500" y="280" width="130" height="150" fill="#b2dfdb" stroke="#00897b" stroke-width="2"/>
-  <text x="1565" y="335" text-anchor="middle" font-size="12" fill="#00695c" font-weight="bold" font-family="Arial">ÖĞRENCİ</text>
-  <text x="1565" y="355" text-anchor="middle" font-size="12" fill="#00695c" font-weight="bold" font-family="Arial">PROJ. OFİSİ</text>
-  <text x="1565" y="375" text-anchor="middle" font-size="11" fill="#00695c" font-family="Arial">149</text>
-  <rect x="1545" y="270" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-  
-  <!-- KALİBRASYON VE UYGULAMALARI LAB 150 -->
-  <rect x="1650" y="280" width="130" height="150" fill="#b2dfdb" stroke="#00897b" stroke-width="2"/>
-  <text x="1715" y="325" text-anchor="middle" font-size="11" fill="#00695c" font-weight="bold" font-family="Arial">KALİBRASYON</text>
-  <text x="1715" y="340" text-anchor="middle" font-size="11" fill="#00695c" font-weight="bold" font-family="Arial">VE</text>
-  <text x="1715" y="355" text-anchor="middle" font-size="11" fill="#00695c" font-weight="bold" font-family="Arial">UYGULAMALARI</text>
-  <text x="1715" y="370" text-anchor="middle" font-size="11" fill="#00695c" font-weight="bold" font-family="Arial">LAB</text>
-  <text x="1715" y="390" text-anchor="middle" font-size="10" fill="#00695c" font-family="Arial">150</text>
-  <rect x="1695" y="270" width="40" height="30" fill="#fff" stroke="#b0bec5" stroke-width="1"/>
-  
+  <g id="room-159" data-room-id="159" data-room-name="Derslik" data-type="classroom">
+    <rect x="440" y="40" width="120" height="140" class="room classroom"/>
+    <text x="500" y="100" text-anchor="middle" font-size="14" fill="#37474f" font-weight="bold" style="white-space: pre;">DERSLİK</text>
+    <text x="500" y="120" text-anchor="middle" font-size="12" fill="#37474f" style="white-space: pre;">159</text>
+    <rect x="480" y="165" width="40" height="20" class="door"/>
+  </g>
+  <g id="room-158" data-room-id="158" data-room-name="Derslik" data-type="classroom">
+    <rect x="570" y="40" width="120" height="140" class="room classroom"/>
+    <text x="630" y="100" text-anchor="middle" font-size="14" fill="#37474f" font-weight="bold" style="white-space: pre;">DERSLİK</text>
+    <text x="630" y="120" text-anchor="middle" font-size="12" fill="#37474f" style="white-space: pre;">158</text>
+    <rect x="610" y="165" width="40" height="20" class="door"/>
+  </g>
+  <g id="room-157" data-room-id="157" data-room-name="Derslik" data-type="classroom">
+    <rect x="700" y="40" width="120" height="140" class="room classroom"/>
+    <text x="760" y="100" text-anchor="middle" font-size="14" fill="#37474f" font-weight="bold" style="white-space: pre;">DERSLİK</text>
+    <text x="760" y="120" text-anchor="middle" font-size="12" fill="#37474f" style="white-space: pre;">157</text>
+    <rect x="740" y="165" width="40" height="20" class="door"/>
+  </g>
+  <g id="stairs-1" data-type="stairs" data-name="Merdiven 1">
+    <rect x="830" y="40" width="80" height="140" class="room stairs"/>
+    <text x="870" y="100" text-anchor="middle" font-size="10" fill="#666" font-weight="bold" style="white-space: pre;">MERDİVEN</text>
+    <g stroke="#757575" stroke-width="2">
+      <line x1="840" y1="55" x2="900" y2="55"/>
+      <line x1="840" y1="70" x2="900" y2="70"/>
+      <line x1="840" y1="85" x2="900" y2="85"/>
+      <line x1="840" y1="115" x2="900" y2="115"/>
+      <line x1="840" y1="130" x2="900" y2="130"/>
+      <line x1="840" y1="145" x2="900" y2="145"/>
+      <line x1="840" y1="160" x2="900" y2="160"/>
+    </g>
+  </g>
+  <g id="room-156" data-room-id="156" data-room-name="Kimya Lab" data-type="lab">
+    <rect x="920" y="40" width="160" height="140" class="room lab"/>
+    <text x="1000" y="95" text-anchor="middle" font-size="14" fill="#00695c" font-weight="bold" style="white-space: pre;">KİMYA LAB.</text>
+    <text x="1000" y="115" text-anchor="middle" font-size="12" fill="#00695c" style="white-space: pre;">156</text>
+    <rect x="980" y="165" width="40" height="20" class="door"/>
+  </g>
+  <g id="room-155" data-room-id="155" data-room-name="Modelleme Opt. Lab" data-type="lab">
+    <rect x="1090" y="40" width="140" height="140" class="room lab"/>
+    <text x="1160" y="85" text-anchor="middle" font-size="12" fill="#00695c" font-weight="bold" style="white-space: pre;">MODELLEME</text>
+    <text x="1160" y="100" text-anchor="middle" font-size="12" fill="#00695c" font-weight="bold" style="white-space: pre;">OPT. LAB</text>
+    <text x="1160" y="120" text-anchor="middle" font-size="11" fill="#00695c" style="white-space: pre;">155</text>
+    <rect x="1140" y="165" width="40" height="20" class="door"/>
+  </g>
+  <g id="wc-1" data-room-id="WC1" data-room-name="WC" data-type="wc">
+    <rect x="1240" y="40" width="70" height="140" class="room" fill="#eeeeee" stroke="#bdbdbd"/>
+    <text x="1275" y="110" text-anchor="middle" font-size="16" fill="#616161" font-weight="bold" style="white-space: pre;">WC</text>
+  </g>
+  <g id="room-151" data-room-id="151" data-room-name="Maket Atölyesi" data-type="lab">
+    <rect x="1320" y="40" width="130" height="140" class="room lab"/>
+    <text x="1385" y="85" text-anchor="middle" font-size="12" fill="#00695c" font-weight="bold" style="white-space: pre;">MAKET</text>
+    <text x="1385" y="102" text-anchor="middle" font-size="12" fill="#00695c" font-weight="bold" style="white-space: pre;">ATÖLYESİ</text>
+    <text x="1385" y="122" text-anchor="middle" font-size="11" fill="#00695c" style="white-space: pre;">151</text>
+    <rect x="1365" y="165" width="40" height="20" class="door"/>
+  </g>
+  <g id="room-131" data-room-id="131" data-room-name="Temel Elektronik Lab" data-type="lab">
+    <rect x="1460" y="40" width="160" height="140" class="room" fill="#80cbc4" stroke="#00695c" stroke-width="2"/>
+    <text x="1540" y="85" text-anchor="middle" font-size="12" fill="#004d40" font-weight="bold" style="white-space: pre;">TEMEL ELEK.</text>
+    <text x="1540" y="102" text-anchor="middle" font-size="12" fill="#004d40" font-weight="bold" style="white-space: pre;">LAB.</text>
+    <text x="1540" y="122" text-anchor="middle" font-size="11" fill="#004d40" style="white-space: pre;">131-1</text>
+    <rect x="1520" y="165" width="40" height="20" class="door"/>
+  </g>
+  <g id="room-141" data-room-id="141" data-room-name="Areli İletişim USAM" data-type="office">
+    <rect x="300" y="270" width="120" height="150" class="room office"/>
+    <text x="360" y="320" text-anchor="middle" font-size="11" fill="#1b5e20" font-weight="bold" style="white-space: pre;">ARELİ</text>
+    <text x="360" y="335" text-anchor="middle" font-size="11" fill="#1b5e20" font-weight="bold" style="white-space: pre;">İLETİŞİM</text>
+    <text x="360" y="350" text-anchor="middle" font-size="11" fill="#1b5e20" font-weight="bold" style="white-space: pre;">USAM</text>
+    <text x="360" y="370" text-anchor="middle" font-size="10" fill="#1b5e20" style="white-space: pre;">141-1</text>
+    <rect x="340" y="270" width="40" height="15" class="door"/>
+  </g>
+  <g id="room-142" data-room-id="142" data-room-name="Derslik" data-type="classroom">
+    <rect x="430" y="270" width="120" height="150" class="room classroom"/>
+    <text x="490" y="335" text-anchor="middle" font-size="14" fill="#37474f" font-weight="bold" style="white-space: pre;">DERSLİK</text>
+    <text x="490" y="355" text-anchor="middle" font-size="12" fill="#37474f" style="white-space: pre;">142</text>
+    <rect x="470" y="270" width="40" height="15" class="door"/>
+  </g>
+  <g id="room-143" data-room-id="143" data-room-name="Derslik" data-type="classroom">
+    <rect x="560" y="270" width="120" height="150" class="room classroom"/>
+    <text x="620" y="335" text-anchor="middle" font-size="14" fill="#37474f" font-weight="bold" style="white-space: pre;">DERSLİK</text>
+    <text x="620" y="355" text-anchor="middle" font-size="12" fill="#37474f" style="white-space: pre;">143</text>
+    <rect x="600" y="270" width="40" height="15" class="door"/>
+  </g>
+  <g id="room-144" data-room-id="144" data-room-name="Derslik" data-type="classroom">
+    <rect x="690" y="270" width="120" height="150" class="room classroom"/>
+    <text x="750" y="335" text-anchor="middle" font-size="14" fill="#37474f" font-weight="bold" style="white-space: pre;">DERSLİK</text>
+    <text x="750" y="355" text-anchor="middle" font-size="12" fill="#37474f" style="white-space: pre;">144</text>
+    <rect x="730" y="270" width="40" height="15" class="door"/>
+  </g>
+  <g id="room-145" data-room-id="145" data-room-name="Müh. Öğr. Çal. Ofisi" data-type="office">
+    <rect x="820" y="270" width="100" height="150" class="room classroom"/>
+    <text x="870" y="325" text-anchor="middle" font-size="10" fill="#263238" font-weight="bold" style="white-space: pre;">MÜH. ÖĞR.</text>
+    <text x="870" y="340" text-anchor="middle" font-size="10" fill="#263238" font-weight="bold" style="white-space: pre;">ÇAL. OFİSİ</text>
+    <text x="870" y="360" text-anchor="middle" font-size="10" fill="#263238" style="white-space: pre;">145</text>
+    <rect x="850" y="270" width="40" height="15" class="door"/>
+  </g>
+  <g id="room-146" data-room-id="146" data-room-name="Fizik Lab" data-type="lab">
+    <rect x="930" y="270" width="160" height="150" class="room lab"/>
+    <text x="1010" y="335" text-anchor="middle" font-size="14" fill="#00695c" font-weight="bold" style="white-space: pre;">FİZİK LAB.</text>
+    <text x="1010" y="360" text-anchor="middle" font-size="12" fill="#00695c" style="white-space: pre;">146</text>
+    <rect x="990" y="270" width="40" height="15" class="door"/>
+  </g>
+  <g id="room-147" data-room-id="147" data-room-name="Büyük Veri ve IoT Lab" data-type="lab">
+    <rect x="1100" y="270" width="150" height="150" class="room lab"/>
+    <text x="1175" y="325" text-anchor="middle" font-size="11" fill="#00695c" font-weight="bold" style="white-space: pre;">BÜYÜK VERİ</text>
+    <text x="1175" y="342" text-anchor="middle" font-size="11" fill="#00695c" font-weight="bold" style="white-space: pre;">VE IOT LAB</text>
+    <text x="1175" y="365" text-anchor="middle" font-size="11" fill="#00695c" style="white-space: pre;">147</text>
+    <rect x="1155" y="270" width="40" height="15" class="door"/>
+  </g>
+  <g id="room-148" data-room-id="148" data-room-name="Araştırma Görev Girişi" data-type="office">
+    <rect x="1260" y="270" width="100" height="150" class="room classroom"/>
+    <text x="1310" y="320" text-anchor="middle" font-size="10" fill="#263238" font-weight="bold" style="white-space: pre;">ARAŞTIRMA</text>
+    <text x="1310" y="335" text-anchor="middle" font-size="10" fill="#263238" font-weight="bold" style="white-space: pre;">GÖREV</text>
+    <text x="1310" y="350" text-anchor="middle" font-size="10" fill="#263238" font-weight="bold" style="white-space: pre;">GİRİŞİ</text>
+    <text x="1310" y="370" text-anchor="middle" font-size="10" fill="#263238" style="white-space: pre;">148</text>
+    <rect x="1290" y="270" width="40" height="15" class="door"/>
+  </g>
+  <g id="room-149" data-room-id="149" data-room-name="Öğrenci Proje Ofisi" data-type="lab">
+    <rect x="1370" y="270" width="120" height="150" class="room lab"/>
+    <text x="1430" y="325" text-anchor="middle" font-size="11" fill="#00695c" font-weight="bold" style="white-space: pre;">ÖĞRENCİ</text>
+    <text x="1430" y="342" text-anchor="middle" font-size="11" fill="#00695c" font-weight="bold" style="white-space: pre;">PROJ. OFİSİ</text>
+    <text x="1430" y="365" text-anchor="middle" font-size="10" fill="#00695c" style="white-space: pre;">149</text>
+    <rect x="1410" y="270" width="40" height="15" class="door"/>
+  </g>
+  <g id="room-150" data-room-id="150" data-room-name="Kalibrasyon Lab" data-type="lab">
+    <rect x="1500" y="270" width="150" height="150" class="room lab"/>
+    <text x="1575" y="315" text-anchor="middle" font-size="10" fill="#00695c" font-weight="bold" style="white-space: pre;">KALİBRASYON</text>
+    <text x="1575" y="330" text-anchor="middle" font-size="10" fill="#00695c" font-weight="bold" style="white-space: pre;">VE</text>
+    <text x="1575" y="345" text-anchor="middle" font-size="10" fill="#00695c" font-weight="bold" style="white-space: pre;">UYGULAMALARI</text>
+    <text x="1575" y="360" text-anchor="middle" font-size="10" fill="#00695c" font-weight="bold" style="white-space: pre;">LAB</text>
+    <text x="1575" y="380" text-anchor="middle" font-size="10" fill="#00695c" style="white-space: pre;">150</text>
+    <rect x="1555" y="270" width="40" height="15" class="door"/>
+  </g>
+  <g id="room-yemekhane" data-room-id="YEMEKHANE" data-room-name="Yemekhane" data-type="cafeteria">
+    <rect x="20" y="190" width="170" height="80" class="room cafeteria"/>
+    <text x="105" y="235" text-anchor="middle" font-size="16" fill="#33691e" font-weight="bold" style="white-space: pre;">YEMEKHANE</text>
+    <rect x="175" y="210" width="30" height="40" class="door"/>
+  </g>
+  <g id="room-wc-bay" data-room-id="WC-BAY" data-room-name="WC Bay" data-type="wc">
+    <rect x="20" y="280" width="170" height="100" class="room wc"/>
+    <text x="105" y="335" text-anchor="middle" font-size="16" fill="#e65100" font-weight="bold" style="white-space: pre;">WC BAY</text>
+    <rect x="175" y="310" width="30" height="40" class="door"/>
+  </g>
+  <g id="stairs-left" data-type="stairs" data-name="Merdiven Sol">
+    <rect x="20" y="390" width="170" height="90" class="room stairs"/>
+    <text x="105" y="440" text-anchor="middle" font-size="12" fill="#616161" font-weight="bold" style="white-space: pre;">MERDİVEN 2</text>
+    <g stroke="#757575" stroke-width="2">
+      <line x1="40" y1="405" x2="170" y2="405"/>
+      <line x1="40" y1="420" x2="170" y2="420"/>
+      <line x1="40" y1="450" x2="170" y2="450"/>
+      <line x1="40" y1="465" x2="170" y2="465"/>
+    </g>
+  </g>
+  <g id="room-139" data-room-id="139" data-room-name="Derslik" data-type="classroom">
+    <rect x="20" y="490" width="170" height="100" class="room" fill="#f8bbd0" stroke="#c2185b" stroke-width="2"/>
+    <text x="105" y="545" text-anchor="middle" font-size="14" fill="#880e4f" font-weight="bold" style="white-space: pre;">DERSLİK 139</text>
+    <rect x="175" y="520" width="30" height="40" class="door"/>
+  </g>
+  <g id="room-120" data-room-id="120" data-room-name="Derslik" data-type="classroom">
+    <rect x="300" y="430" width="120" height="140" class="room classroom"/>
+    <text x="360" y="495" text-anchor="middle" font-size="14" fill="#37474f" font-weight="bold" style="white-space: pre;">DERSLİK</text>
+    <text x="360" y="515" text-anchor="middle" font-size="12" fill="#37474f" style="white-space: pre;">120</text>
+    <rect x="280" y="480" width="25" height="40" class="door"/>
+  </g>
+  <g id="entrance" data-type="entrance">
+    <rect x="200" y="680" width="90" height="30" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
+    <text x="245" y="700" text-anchor="middle" font-size="12" fill="#1565c0" font-weight="bold" style="white-space: pre;">GİRİŞ</text>
+    <path d="M 205 710 L 215 680 M 225 710 L 235 680 M 245 710 L 255 680 M 265 710 L 275 680" stroke="#2196f3" stroke-width="1" opacity="0.5"/>
+  </g>
+  <g id="beacon-B1" data-beacon-id="B1" data-x="1430" data-y="255" data-nearest-room="149">
+    <rect x="1418" y="243" width="25" height="25" class="beacon"/>
+    <text x="1430" y="261" text-anchor="middle" class="beacon-label" style="white-space: pre;">B1</text>
+  </g>
+  <g id="beacon-B2" data-beacon-id="B2" data-x="1310" data-y="255" data-nearest-room="148">
+    <rect x="1298" y="243" width="25" height="25" class="beacon"/>
+    <text x="1310" y="261" text-anchor="middle" class="beacon-label" style="white-space: pre;">B2</text>
+  </g>
+  <g id="beacon-B3" data-beacon-id="B3" data-x="1175" data-y="255" data-nearest-room="147">
+    <rect x="1163" y="243" width="25" height="25" class="beacon"/>
+    <text x="1175" y="261" text-anchor="middle" class="beacon-label" style="white-space: pre;">B3</text>
+  </g>
+  <g id="beacon-B4" data-beacon-id="B4" data-x="1160" data-y="195" data-nearest-room="155">
+    <rect x="1148" y="183" width="25" height="25" class="beacon"/>
+    <text x="1160" y="201" text-anchor="middle" class="beacon-label" style="white-space: pre;">B4</text>
+  </g>
+  <g id="beacon-B5" data-beacon-id="B5" data-x="1010" data-y="255" data-nearest-room="146">
+    <rect x="998" y="243" width="25" height="25" class="beacon"/>
+    <text x="1010" y="261" text-anchor="middle" class="beacon-label" style="white-space: pre;">B5</text>
+  </g>
+  <g id="beacon-B6" data-beacon-id="B6" data-x="1000" data-y="195" data-nearest-room="156">
+    <rect x="988" y="183" width="25" height="25" class="beacon"/>
+    <text x="1000" y="201" text-anchor="middle" class="beacon-label" style="white-space: pre;">B6</text>
+  </g>
+  <g id="beacon-B7" data-beacon-id="B7" data-x="870" data-y="255" data-nearest-room="145">
+    <rect x="858" y="243" width="25" height="25" class="beacon"/>
+    <text x="870" y="261" text-anchor="middle" class="beacon-label" style="white-space: pre;">B7</text>
+  </g>
+  <g id="beacon-B8" data-beacon-id="B8" data-x="490" data-y="255" data-nearest-room="142">
+    <rect x="478" y="243" width="25" height="25" class="beacon"/>
+    <text x="490" y="261" text-anchor="middle" class="beacon-label" style="white-space: pre;">B8</text>
+  </g>
+  <g id="beacon-B9" data-beacon-id="B9" data-x="630" data-y="195" data-nearest-room="158">
+    <rect x="618" y="183" width="25" height="25" class="beacon"/>
+    <text x="630" y="201" text-anchor="middle" class="beacon-label" style="white-space: pre;">B9</text>
+  </g>
+  <g id="beacon-B10" data-beacon-id="B10" data-x="370" data-y="195" data-nearest-room="160">
+    <rect x="358" y="183" width="25" height="25" class="beacon"/>
+    <text x="370" y="201" text-anchor="middle" class="beacon-label" style="white-space: pre;">B10</text>
+  </g>
+  <g id="beacon-B11" data-beacon-id="B11" data-x="360" data-y="255" data-nearest-room="141">
+    <rect x="348" y="243" width="25" height="25" class="beacon"/>
+    <text x="360" y="261" text-anchor="middle" class="beacon-label" style="white-space: pre;">B11</text>
+  </g>
+  <g id="beacon-B12" data-beacon-id="B12" data-x="250" data-y="195" data-nearest-room="161" transform="matrix(1, 0, 0, 1, 0, -3.921107)">
+    <rect x="238" y="183" width="25" height="25" class="beacon"/>
+    <text x="250" y="201" text-anchor="middle" class="beacon-label" style="white-space: pre;">B12</text>
+  </g>
+  <g id="beacon-B13" data-beacon-id="B13" data-x="230" data-y="280" data-nearest-room="WC-BAY" transform="matrix(1, 0, 0, 1, -31.798566, -48.151763)">
+    <rect x="218" y="268" width="25" height="25" class="beacon"/>
+    <text x="230" y="286" text-anchor="middle" class="beacon-label" style="white-space: pre;">B13</text>
+  </g>
+  <g id="beacon-B14" data-beacon-id="B14" data-x="260" data-y="500" data-nearest-room="120" transform="matrix(1, 0, 0, 1, -53.603294, 39.066505)">
+    <rect x="248" y="488" width="25" height="25" class="beacon"/>
+    <text x="260" y="506" text-anchor="middle" class="beacon-label" style="white-space: pre;">B14</text>
+  </g>
+  <g id="beacon-B15" data-beacon-id="B15" data-x="230" data-y="620" data-nearest-room="entrance" transform="matrix(1, 0, 0, 1, 48.360805, -121.554724)">
+    <rect x="218" y="608" width="25" height="25" class="beacon"/>
+    <text x="230" y="626" text-anchor="middle" class="beacon-label" style="white-space: pre;">B15</text>
+  </g>
+  <g id="scale-bar" transform="translate(1700, 750)">
+    <line x1="0" y1="0" x2="200" y2="0" stroke="#333" stroke-width="3"/>
+    <line x1="0" y1="-8" x2="0" y2="8" stroke="#333" stroke-width="3"/>
+    <line x1="100" y1="-5" x2="100" y2="5" stroke="#333" stroke-width="2"/>
+    <line x1="200" y1="-8" x2="200" y2="8" stroke="#333" stroke-width="3"/>
+    <text x="0" y="25" text-anchor="middle" font-size="12" fill="#333" style="white-space: pre;">0</text>
+    <text x="100" y="25" text-anchor="middle" font-size="12" fill="#333" style="white-space: pre;">10m</text>
+    <text x="200" y="25" text-anchor="middle" font-size="12" fill="#333" style="white-space: pre;">20m</text>
+  </g>
+  <g id="compass" transform="translate(1850, 100)">
+    <circle cx="0" cy="0" r="35" fill="white" stroke="#333" stroke-width="2"/>
+    <polygon points="0,-25 -8,5 0,-5 8,5" fill="#e53935"/>
+    <polygon points="0,25 -8,-5 0,5 8,-5" fill="#333"/>
+    <text x="0" y="-38" text-anchor="middle" font-size="14" font-weight="bold" fill="#333" style="white-space: pre;">K</text>
+    <text x="0" y="50" text-anchor="middle" font-size="12" fill="#666" style="white-space: pre;">G</text>
+    <text x="-42" y="5" text-anchor="middle" font-size="12" fill="#666" style="white-space: pre;">B</text>
+    <text x="42" y="5" text-anchor="middle" font-size="12" fill="#666" style="white-space: pre;">D</text>
+  </g>
+  <g id="legend" transform="translate(1650, 500)">
+    <rect x="0" y="0" width="180" height="200" fill="white" stroke="#333" stroke-width="1" rx="5"/>
+    <text x="90" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#333" style="white-space: pre;">LEJANT</text>
+    <rect x="15" y="40" width="25" height="18" class="room classroom"/>
+    <text x="50" y="54" font-size="11" fill="#333" style="white-space: pre;">Derslik</text>
+    <rect x="15" y="65" width="25" height="18" class="room lab"/>
+    <text x="50" y="79" font-size="11" fill="#333" style="white-space: pre;">Laboratuvar</text>
+    <rect x="15" y="90" width="25" height="18" class="room office"/>
+    <text x="50" y="104" font-size="11" fill="#333" style="white-space: pre;">Ofis</text>
+    <rect x="15" y="115" width="25" height="18" class="room wc"/>
+    <text x="50" y="129" font-size="11" fill="#333" style="white-space: pre;">WC</text>
+    <rect x="15" y="140" width="25" height="18" class="room stairs"/>
+    <text x="50" y="154" font-size="11" fill="#333" style="white-space: pre;">Merdiven</text>
+    <rect x="15" y="165" width="20" height="20" class="beacon"/>
+    <text x="50" y="180" font-size="11" fill="#333" style="white-space: pre;">Beacon</text>
+  </g>
 </svg>
