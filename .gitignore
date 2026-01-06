@@ -53,3 +53,8 @@ app.*.map.json
 # Generated files
 /android/local.properties
 /ios/Flutter/flutter_export_environment.sh
+
+
+/backend
+/.env
+/.navigation-app-Backend

@@ -224,7 +224,7 @@ class _NavigationScreenState extends State<NavigationScreen>
                   mapAssetPath: 'assets/school_floor.svg',
                   userLocation: demoService.currentLocation,
                   activeRoute: demoService.activeRoute,
-                  mapSize: const Size(800, 600),
+                  mapSize: const Size(2000, 800), // SVG boyutuna uygun
                 ),
               ),
 
@@ -358,7 +358,7 @@ class _NavigationScreenState extends State<NavigationScreen>
                   mapAssetPath: 'assets/school_floor.svg',
                   userLocation: wsService.currentLocation,
                   activeRoute: wsService.activeRoute,
-                  mapSize: const Size(800, 600),
+                  mapSize: const Size(2000, 800), // SVG boyutuna uygun
                 ),
               ),
 

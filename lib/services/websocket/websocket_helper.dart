@@ -1,7 +1,10 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:io';
+import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
+import 'package:web_socket_channel/io.dart';
 import '../../core/config/env_config.dart';
 import '../../core/constants/app_constants.dart';
 import '../../models/models.dart';
@@ -42,19 +45,46 @@ class WebSocketMessage {
   }) : timestamp = timestamp ?? DateTime.now();
 
   factory WebSocketMessage.fromJson(Map<String, dynamic> json) {
+    DateTime? parsedTimestamp;
+    final ts = json['timestamp'];
+    if (ts != null) {
+      if (ts is int) {
+        parsedTimestamp = DateTime.fromMillisecondsSinceEpoch(ts);
+      } else if (ts is String) {
+        parsedTimestamp = DateTime.tryParse(ts);
+      }
+    }
+    
     return WebSocketMessage(
       type: _parseMessageType(json['type'] as String?),
       data: json['data'] as Map<String, dynamic>?,
       error: json['error'] as String?,
-      timestamp: json['timestamp'] != null
-          ? DateTime.parse(json['timestamp'] as String)
-          : DateTime.now(),
+      timestamp: parsedTimestamp ?? DateTime.now(),
     );
   }
 
   Map<String, dynamic> toJson() {
+    // Backend'in beklediği format
+    String typeString;
+    switch (type) {
+      case WebSocketMessageType.beaconData:
+        typeString = 'location'; // Backend 'location' bekliyor
+        break;
+      case WebSocketMessageType.requestNavigation:
+        typeString = 'requestNavigation';
+        break;
+      case WebSocketMessageType.cancelNavigation:
+        typeString = 'cancelNavigation';
+        break;
+      case WebSocketMessageType.ping:
+        typeString = 'ping';
+        break;
+      default:
+        typeString = type.name;
+    }
+    
     return {
-      'type': type.name.toUpperCase(),
+      'type': typeString,
       if (data != null) 'data': data,
       if (error != null) 'error': error,
       'timestamp': timestamp.toIso8601String(),
@@ -63,11 +93,13 @@ class WebSocketMessage {
 
   static WebSocketMessageType _parseMessageType(String? type) {
     switch (type?.toUpperCase()) {
+      case 'LOCATION':  // Backend'den gelen format
       case 'LOCATION_UPDATE':
         return WebSocketMessageType.locationUpdate;
       case 'BEACON_DATA':
         return WebSocketMessageType.beaconData;
       case 'NAVIGATION_PATH':
+      case 'NAVIGATION':  // Backend alternatif format
         return WebSocketMessageType.navigationPath;
       case 'REQUEST_NAVIGATION':
         return WebSocketMessageType.requestNavigation;
@@ -79,6 +111,8 @@ class WebSocketMessage {
         return WebSocketMessageType.pong;
       case 'ERROR':
         return WebSocketMessageType.error;
+      case 'WELCOME':  // Backend hoşgeldin mesajı
+        return WebSocketMessageType.pong; // Ignore olarak işle
       default:
         return WebSocketMessageType.error;
     }
@@ -125,6 +159,9 @@ class WebSocketHelper {
   Timer? _heartbeatTimer;
   DateTime? _lastPongReceived;
 
+  /// Aktif navigasyon hedefi
+  String? _activeTarget;
+
   /// Debug modu
   bool get _isDebug => EnvConfig.debugMode;
 
@@ -140,7 +177,28 @@ class WebSocketHelper {
 
     try {
       final url = customUrl ?? EnvConfig.websocketUrl;
-      _channel = WebSocketChannel.connect(Uri.parse(url));
+      _log('Hedef URL: $url');
+      
+      // Debug modda SSL sertifika doğrulamasını atla
+      if (_isDebug || kDebugMode) {
+        _log('Debug modu: SSL doğrulama gevşetildi');
+        
+        // SSL sertifika doğrulamasını devre dışı bırakan HttpClient
+        final httpClient = HttpClient()
+          ..badCertificateCallback = (X509Certificate cert, String host, int port) {
+            _log('SSL Sertifika kabul edildi: host=$host, port=$port');
+            return true; // Tüm sertifikaları kabul et (sadece debug için!)
+          };
+        
+        final socket = await WebSocket.connect(
+          url,
+          customClient: httpClient,
+        );
+        _channel = IOWebSocketChannel(socket);
+      } else {
+        // Production'da normal bağlantı
+        _channel = WebSocketChannel.connect(Uri.parse(url));
+      }
 
       // Bağlantının kurulmasını bekle
       await _channel!.ready;
@@ -183,9 +241,62 @@ class WebSocketHelper {
     _channel?.stream.listen(
       (dynamic data) {
         try {
+          // RAW mesajı logla - debug için
+          _log('RAW mesaj: $data');
+          
           final jsonData = jsonDecode(data as String) as Map<String, dynamic>;
+          
+          // Backend'den gelen mesaj tipini kontrol et
+          final messageType = jsonData['type'] as String?;
+          
+          // location mesajı ise direkt işle (backend root level'da veri gönderiyor)
+          if (messageType?.toUpperCase() == 'LOCATION' && jsonData['status'] == 'ok') {
+            _log('Konum verisi alındı: x=${jsonData['x']}, y=${jsonData['y']}, room=${jsonData['nearestRoom']}');
+            
+            // UserLocation oluştur
+            final location = UserLocation(
+              position: Position(
+                x: (jsonData['x'] as num).toDouble(),
+                y: (jsonData['y'] as num).toDouble(),
+              ),
+              accuracy: (jsonData['estimatedDistance'] as num?)?.toDouble() ?? 1.0,
+              timestamp: DateTime.now(),
+              currentRoom: jsonData['nearestRoom'] as String?,
+              usedBeaconCount: 3,
+              confidence: (jsonData['confidence'] as num?)?.toDouble() ?? 0.8,
+            );
+            
+            _locationController.add(location);
+            
+            // Rota bilgisi varsa işle
+            if (jsonData['hasRoute'] == true && jsonData['path'] != null) {
+              _log('Rota bilgisi alındı: ${(jsonData['path'] as List).length} waypoint');
+              
+              final pathList = jsonData['path'] as List;
+              final waypoints = pathList.map((p) => Position(
+                x: (p['x'] as num).toDouble(),
+                y: (p['y'] as num).toDouble(),
+              )).toList();
+              
+              // NavigationRoute oluştur
+              if (waypoints.isNotEmpty && _activeTarget != null) {
+                final route = NavigationRoute(
+                  start: waypoints.first,
+                  destination: waypoints.last,
+                  destinationName: _activeTarget!,
+                  waypoints: waypoints,
+                  totalDistance: _calculateTotalDistance(waypoints),
+                  estimatedTime: (waypoints.length * 3), // Yaklaşık süre (saniye)
+                );
+                _navigationController.add(route);
+              }
+            }
+            
+            return; // İşlem tamamlandı
+          }
+          
+          // Diğer mesajlar için normal parse
           final message = WebSocketMessage.fromJson(jsonData);
-
           _log('Mesaj alındı: ${message.type}');
           _messageController.add(message);
 
@@ -193,6 +304,7 @@ class WebSocketHelper {
           _handleMessage(message);
         } catch (e) {
           _log('Mesaj parse hatası: $e', isError: true);
+          _log('Raw data: $data', isError: true);
         }
       },
       onError: (error) {
@@ -247,49 +359,43 @@ class WebSocketHelper {
       return;
     }
 
-    final message = WebSocketMessage(
-      type: WebSocketMessageType.beaconData,
-      data: {
-        'beacons': beacons.map((b) => b.toJson()).toList(),
-        'deviceId': _getDeviceId(),
-      },
-    );
+    // Backend'in beklediği format: type=location, beacons array, opsiyonel target
+    final messageData = {
+      'type': 'location',
+      'beacons': beacons.map((b) => {
+        'macAddress': b.macAddress,
+        'rssi': b.rssi,
+        'name': b.name,
+      }).toList(),
+      'deviceId': _getDeviceId(),
+      // Eğer aktif navigasyon varsa target ekle
+      if (_activeTarget != null) 'target': _activeTarget,
+    };
 
-    _sendMessage(message);
-    _log('Beacon verisi gönderildi: ${beacons.length} beacon');
+    _sendRawMessage(messageData);
+    _log('Beacon verisi gönderildi: ${beacons.length} beacon${_activeTarget != null ? ", hedef: $_activeTarget" : ""}');
+  }
+  
+  /// Raw JSON mesaj gönder
+  void _sendRawMessage(Map<String, dynamic> data) {
+    if (_channel != null && _connectionState == WebSocketConnectionState.connected) {
+      final jsonString = jsonEncode(data);
+      _log('Gönderilen mesaj: $jsonString');
+      _channel!.sink.add(jsonString);
+    }
   }
 
-  /// Navigasyon isteği gönder
+  /// Navigasyon isteği gönder - backend'de ayrı bir mesaj tipi yok
+  /// Navigasyon, location mesajına 'target' parametresi ekleyerek yapılır
   void requestNavigation(String destinationId) {
-    if (_connectionState != WebSocketConnectionState.connected) {
-      _log('Bağlantı yok, navigasyon isteği gönderilemedi', isError: true);
-      return;
-    }
-
-    final message = WebSocketMessage(
-      type: WebSocketMessageType.requestNavigation,
-      data: {
-        'destinationId': destinationId,
-        'deviceId': _getDeviceId(),
-      },
-    );
-
-    _sendMessage(message);
-    _log('Navigasyon isteği gönderildi: $destinationId');
+    _activeTarget = destinationId;
+    _log('Navigasyon hedefi ayarlandı: $destinationId');
+    _log('Sonraki beacon gönderiminde rota hesaplanacak');
   }
 
   /// Navigasyonu iptal et
   void cancelNavigation() {
-    if (_connectionState != WebSocketConnectionState.connected) {
-      return;
-    }
-
-    final message = WebSocketMessage(
-      type: WebSocketMessageType.cancelNavigation,
-      data: {'deviceId': _getDeviceId()},
-    );
-
-    _sendMessage(message);
+    _activeTarget = null;
     _navigationController.add(null);
     _log('Navigasyon iptal edildi');
   }
@@ -357,6 +463,19 @@ class WebSocketHelper {
   String _getDeviceId() {
     // Gerçek uygulamada device_info_plus paketi ile alınabilir
     return 'flutter_device_${DateTime.now().millisecondsSinceEpoch}';
+  }
+
+  /// Toplam mesafeyi hesapla (piksel cinsinden)
+  double _calculateTotalDistance(List<Position> waypoints) {
+    if (waypoints.length < 2) return 0;
+    
+    double total = 0;
+    for (int i = 0; i < waypoints.length - 1; i++) {
+      final dx = waypoints[i + 1].x - waypoints[i].x;
+      final dy = waypoints[i + 1].y - waypoints[i].y;
+      total += sqrt(dx * dx + dy * dy);
+    }
+    return total / 18.0; // Piksel -> metre dönüşümü (backend'de 18px = 1m)
   }
 
   /// Log yazdır
